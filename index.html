@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manya Corporation - Industrial Engineering Solutions</title>
+    <meta name="description" content="Manya Corporation specializes in Jigs and Fixtures, Low-Cost Automation, Special Purpose Machines (SPMs), and Leak Testing Machines for manufacturing excellence.">
+    <meta name="keywords" content="Turnkey projects, Tooled up solution, pneumatic fixtures, hydralic fixtures, SPMs for bearing Assembly, Tooling Solution">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    
+    <style>
+        /* Custom styles */
+        .gradient-text {
+            /* Adjusted gradient to include blue */
+            background: linear-gradient(135deg, #B71C1C, #00BCD4, #B71C1C); /* Dark Red, Cyan, Dark Red */
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .carousel-slide { transition: transform 0.5s ease-in-out; }
+        .mobile-menu { transform: translateX(100%); transition: transform 0.3s ease-in-out; }
+        .mobile-menu.open { transform: translateX(0); }
+        .product-card { transition: all 0.3s ease; }
+        .product-card:hover { transform: translateY(-5px); box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04); }
+        .product-image { transition: transform 0.3s ease; }
+        .product-card:hover .product-image { transform: scale(1.05); }
+
+        /* Custom theme colors */
+        .bg-primary { background-color: #B71C1C; /* Dark Red */ }
+        .hover\:bg-primary-dark:hover { background-color: #8C0000; /* Darker Red */ }
+        .text-primary { color: #B71C1C; }
+        .border-primary { border-color: #B71C1C; }
+
+        .bg-accent { background-color: #00BCD4; /* Cyan */ }
+        .hover\:bg-accent-dark:hover { background-color: #00838F; /* Darker Cyan */ }
+        .text-accent { color: #00BCD4; }
+        .focus\:ring-accent:focus { ring-color: #00BCD4; }
+
+        /* Override existing Tailwind classes with new custom colors where appropriate */
+        .bg-red-600 { background-color: #B71C1C; } /* Primary red */
+        .hover\:bg-red-700:hover { background-color: #8C0000; } /* Darker primary red on hover */
+        .text-red-600 { color: #B71C1C; }
+        .hover\:text-red-600:hover { color: #00BCD4; } /* Blue hover for mobile menu links */
+        .hover\:text-red-200:hover { color: #ADD8E6; } /* Lighter blue for desktop nav hover */
+    </style>
+</head>
+<body class="min-h-screen bg-white font-sans">
+    <header class="bg-primary text-white sticky top-0 z-50 shadow-lg">
+        <div class="container mx-auto px-4">
+            <div class="flex items-center justify-between py-3 md:py-4">
+                <a href="#home" class="flex items-center hover:opacity-90 transition-opacity">
+                    <img src="logo.png" alt="Manya Corporation Logo" class="h-28 sm:h-38 w-auto object-contain">
+                </a>
+                <button id="mobile-menu-btn" class="md:hidden text-white hover:bg-accent-dark p-2 rounded">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
+                <nav class="hidden md:flex space-x-6 lg:space-x-8">
+                    <a href="#home" class="hover:text-red-200 transition-colors text-sm lg:text-base">HOME</a>
+                    <a href="#about" class="hover:text-red-200 transition-colors text-sm lg:text-base">ABOUT US</a>
+                    <a href="#products" class="hover:text-red-200 transition-colors text-sm lg:text-base">PRODUCTS</a>
+                    <a href="#contact" class="hover:text-red-200 transition-colors text-sm lg:text-base">CONTACT US</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <div id="mobile-menu-overlay" class="fixed inset-0 bg-black bg-opacity-50 z-40 hidden"></div>
+    <div id="mobile-menu" class="mobile-menu fixed top-0 right-0 w-80 h-full bg-white z-50 shadow-lg">
+        <div class="p-6">
+            <div class="flex justify-between items-center mb-8">
+                <h2 class="text-xl font-bold text-gray-800">Menu</h2>
+                <button id="mobile-menu-close" class="text-gray-600 hover:text-accent">
+                    <i data-lucide="x" class="w-6 h-6"></i>
+                </button>
+            </div>
+            <nav class="flex flex-col space-y-4">
+                <a href="#home" class="mobile-menu-link text-gray-800 hover:text-accent transition-colors py-2 border-b">HOME</a>
+                <a href="#about" class="mobile-menu-link text-gray-800 hover:text-accent transition-colors py-2 border-b">ABOUT US</a>
+                <a href="#products" class="mobile-menu-link text-gray-800 hover:text-accent transition-colors py-2 border-b">PRODUCTS</a>
+                <a href="#contact" class="mobile-menu-link text-gray-800 hover:text-accent transition-colors py-2 border-b">CONTACT US</a>
+            </nav>
+        </div>
+    </div>
+
+    <section id="home" class="bg-gray-100 py-6 sm:py-12 lg:py-16 relative overflow-hidden">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-8 lg:mb-12">
+                <div class="relative inline-block">
+                    <h1 class="text-4xl sm:text-5xl lg:text-7xl font-bold gradient-text mb-2">MANYA</h1>
+                    <h2 class="text-2xl sm:text-3xl lg:text-4xl font-light text-gray-700 tracking-wider">CORPORATION</h2>
+                    <div class="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-primary rounded-full"></div>
+                </div>
+                <p class="text-lg sm:text-xl text-gray-600 mt-6 font-light">Precision Solutions for Manufacturing Excellence</p>
+            </div>
+            <div class="flex flex-col lg:flex-row items-center justify-between space-y-6 lg:space-y-0 lg:space-x-8">
+                <button id="prev-slide" class="hidden lg:block bg-primary text-white p-3 rounded-full hover:bg-primary-dark transition z-10"><i data-lucide="chevron-left" class="w-6 h-6"></i></button>
+                <div class="flex-1 relative w-full">
+                    <div id="carousel" class="w-full h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px] relative overflow-hidden rounded-lg shadow-lg"></div>
+                    <button id="prev-slide-mobile" class="lg:hidden absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 bg-primary text-white p-2 rounded-full z-10"><i data-lucide="chevron-left" class="w-4 h-4"></i></button>
+                    <button id="next-slide-mobile" class="lg:hidden absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 bg-primary text-white p-2 rounded-full z-10"><i data-lucide="chevron-right" class="w-4 h-4"></i></button>
+                    <div id="slide-indicators" class="absolute bottom-4 left-1/2 -translate-x-1/2 flex space-x-2 z-10"></div>
+                </div>
+                <button id="next-slide" class="hidden lg:block bg-primary text-white p-3 rounded-full hover:bg-primary-dark transition z-10"><i data-lucide="chevron-right" class="w-6 h-6"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-8 sm:py-12 lg:py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 xl:gap-16">
+                <div class="bg-primary text-white p-6 sm:p-8 lg:p-12 rounded-lg flex flex-col justify-center">
+                    <h3 class="text-2xl sm:text-3xl font-bold mb-4">About Manya Corporation</h3>
+                    <p class="text-base sm:text-lg leading-relaxed mb-6">
+                        Manya Corporation is a trusted name in the engineering industry, backed by 10 years of rich experience in delivering precision solutions for manufacturing excellence. We specialize in the design and development of Jigs and Fixtures, Low-Cost Automation systems, Special Purpose Machines (SPMs), and Leak Testing Machines tailored to meet the evolving needs of modern production environments.
+                    </p>
+                    <h4 class="text-xl sm:text-2xl font-bold mb-3">Why Choose Us</h4>
+                    <ul class="space-y-2 text-base">
+                        <li class="flex items-start">
+                            <i data-lucide="check-circle-2" class="w-5 h-5 mr-2 mt-1 shrink-0"></i>
+                            <span>Proven expertise across multiple sectors including automotive, aerospace, and industrial manufacturing.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-lucide="check-circle-2" class="w-5 h-5 mr-2 mt-1 shrink-0"></i>
+                            <span>Commitment to quality, innovation, and customer satisfaction.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-lucide="check-circle-2" class="w-5 h-5 mr-2 mt-1 shrink-0"></i>
+                            <span>Agile design-to-delivery process with in-house prototyping and testing.</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
+                    <div class="bg-white p-4 sm:p-6 rounded-lg shadow-md text-center hover:shadow-lg transition">
+                        <div class="text-primary text-3xl sm:text-4xl mb-3">🔩</div>
+                        <h4 class="font-semibold text-gray-700">Jigs & Fixtures</h4>
+                        <p class="text-sm text-gray-500 mt-2">Custom-built for accuracy and repeatability.</p>
+                    </div>
+                    <div class="bg-white p-4 sm:p-6 rounded-lg shadow-md text-center hover:shadow-lg transition">
+                        <div class="text-primary text-3xl sm:text-4xl mb-3">🤖</div>
+                        <h4 class="font-semibold text-gray-700">Low-Cost Automation</h4>
+                        <p class="text-sm text-gray-500 mt-2">Smart, scalable solutions to improve productivity.</p>
+                    </div>
+                    <div class="bg-white p-4 sm:p-6 rounded-lg shadow-md text-center hover:shadow-lg transition">
+                        <div class="text-primary text-3xl sm:text-4xl mb-3">⚙️</div>
+                        <h4 class="font-semibold text-gray-700">Special Purpose Machines (SPMs)</h4>
+                        <p class="text-sm text-gray-500 mt-2">Engineered to streamline operations and reduce cycle time.</p>
+                    </div>
+                    <div class="bg-white p-4 sm:p-6 rounded-lg shadow-md text-center hover:shadow-lg transition">
+                        <div class="text-primary text-3xl sm:text-4xl mb-3">💧</div>
+                        <h4 class="font-semibold text-gray-700">Leak Testing Machines</h4>
+                        <p class="text-sm text-gray-500 mt-2">Reliable systems for detecting product leakage.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="products" class="py-8 sm:py-12 lg:py-16">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-8 sm:mb-12">
+                <h2 class="text-2xl sm:text-3xl font-bold text-primary mb-2">Our Products</h2>
+                <div class="w-24 h-1 bg-primary mx-auto"></div>
+            </div>
+            <div id="product-grid-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4 sm:gap-6">
+            </div>
+
+            <div id="product-details" class="mt-16">
+                
+                <div id="cat1-details-section" class="product-details-section hidden mb-12">
+                    <h3 class="text-3xl sm:text-4xl font-bold text-primary mb-4 text-center">Turnkey Projects</h3>
+                    <div class="w-24 h-1 bg-primary mx-auto mb-8"></div>
+                    <div class="bg-white p-4 sm:p-8 rounded-lg shadow-xl">
+                        <img src="turnkey.png" alt="Turnkey Projects Details" class="w-full h-auto rounded-md">
+                    </div>
+                </div>
+
+                <div id="cat2-details-section" class="product-details-section hidden mb-12">
+                    <h3 class="text-3xl sm:text-4xl font-bold text-primary mb-4 text-center">Tooled Up Solution</h3>
+                    <div class="w-24 h-1 bg-primary mx-auto mb-8"></div>
+                     <div class="bg-white p-4 sm:p-8 rounded-lg shadow-xl">
+                        <img src="tu.png" alt="Tooled Up Solution Details" class="w-full h-auto rounded-md">
+                    </div>
+                </div>
+
+                <div id="cat3-details-section" class="product-details-section hidden mb-12">
+                    <h3 class="text-3xl sm:text-4xl font-bold text-primary mb-4 text-center">Pneumatic & Hydraulic Fixtures</h3>
+                    <div class="w-24 h-1 bg-primary mx-auto mb-8"></div>
+                     <div class="bg-white p-4 sm:p-8 rounded-lg shadow-xl">
+                        <img src="ph.png" alt="Pneumatic & Hydraulic Fixtures Details" class="w-full h-auto rounded-md">
+                    </div>
+                </div>
+
+                <div id="cat4-details-section" class="product-details-section hidden mb-12">
+                    <h3 class="text-3xl sm:text-4xl font-bold text-primary mb-4 text-center">SPMs for Bearing Assembly</h3>
+                    <div class="w-24 h-1 bg-primary mx-auto mb-8"></div>
+                     <div class="bg-white p-4 sm:p-8 rounded-lg shadow-xl">
+                        <img src="spm.png" alt="SPMs for Bearing Assembly Details" class="w-full h-auto rounded-md">
+                    </div>
+                </div>
+
+                <div id="cat5-details-section" class="product-details-section hidden mb-12">
+                    <h3 class="text-3xl sm:text-4xl font-bold text-primary mb-4 text-center">Tooling Solution</h3>
+                    <div class="w-24 h-1 bg-primary mx-auto mb-8"></div>
+                     <div class="bg-white p-4 sm:p-8 rounded-lg shadow-xl">
+                        <img src="public/images/details_tooling.jpg" alt="Tooling Solution Details" class="w-full h-auto rounded-md">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-8 sm:py-12 lg:py-16 bg-gray-200">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-6 sm:mb-8 text-center">Inquiry Form</h2>
+                <form id="inquiry-form" class="space-y-4 sm:space-y-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Customer Name <span class="text-red-500">*</span></label>
+                            <input type="text" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-accent" required>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Company Name <span class="text-red-500">*</span></label>
+                            <input type="text" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-accent" required>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Phone Number <span class="text-red-500">*</span></label>
+                            <input type="tel" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-accent" required>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Email <span class="text-red-500">*</span></label>
+                            <input type="email" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-accent" required>
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Message (optional)</label>
+                        <textarea class="w-full h-24 sm:h-32 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-accent"></textarea>
+                    </div>
+                    <div>
+                        <button type="submit" class="bg-gray-800 hover:bg-gray-900 text-white px-8 sm:px-12 py-2 sm:py-3 text-base sm:text-lg rounded transition-colors bg-accent hover:bg-accent-dark">SEND</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-gray-900 text-white py-8 sm:py-12 lg:py-16">
+        <div class="container mx-auto px-4 text-center">
+            <p class="text-white text-sm sm:text-base">Copyright@2025 | Manya Corporation</p>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        // ** HERO SECTION FIXED **
+        const carouselSlides = [
+            { id: 1, image: "1.png", alt: "Carousel image 1" }, 
+            { id: 2, image: "2.png", alt: "Carousel image 2" },
+            { id: 3, image: "3.png", alt: "Carousel image 3" }, 
+            { id: 4, image: "4.png", alt: "Carousel image 4" },
+            { id: 5, image: "5.png", alt: "Carousel image 5" }, 
+            { id: 6, image: "6.png", alt: "Carousel image 6" },
+            { id: 7, image: "7.png", alt: "Carousel image 7" }, 
+            { id: 8, image: "8.png", alt: "Carousel image 8" }
+        ];
+
+        // ** PRODUCT SECTION: Placeholder cover images for categories and updated detail images **
+        // ACTION: You still need to provide images for the 'image' property in productCategories
+        const productCategories = [
+            { id: "cat1", title: "Turnkey Projects", image: "c1.png" }, // Placeholder for cover image
+            { id: "cat2", title: "Tooled Up Solution", image: "c2.png" }, // Placeholder for cover image
+            { id: "cat3", title: "Pneumatic & Hydraulic Fixtures", image: "c3.png" }, // Placeholder for cover image
+            { id: "cat4", title: "SPMs for Bearing Assembly", image: "c4.png" }, // Placeholder for cover image
+            { id: "cat5", title: "Tooling Solution", image: "c5.png" } // Placeholder for cover image
+        ];
+
+        // --- Carousel functionality ---
+        let currentSlide = 0;
+        function initializeCarousel() {
+            const carousel = document.getElementById('carousel');
+            const indicators = document.getElementById('slide-indicators');
+            
+            carousel.innerHTML = '';
+            indicators.innerHTML = '';
+
+            carouselSlides.forEach((slide, index) => {
+                const slideElement = document.createElement('div');
+                slideElement.className = `absolute inset-0 carousel-slide ${index === 0 ? 'translate-x-0' : 'translate-x-full'}`;
+                slideElement.innerHTML = `<img src="${slide.image}" alt="${slide.alt}" class="w-full h-full object-cover">`;
+                carousel.appendChild(slideElement);
+                const indicator = document.createElement('button');
+                // Updated carousel indicator active color
+                indicator.className = `w-3 h-3 rounded-full transition-colors ${index === 0 ? 'bg-accent' : 'bg-white/50'}`; 
+                indicator.addEventListener('click', () => goToSlide(index));
+                indicators.appendChild(indicator);
+            });
+        }
+        function goToSlide(index) {
+            const slides = document.querySelectorAll('.carousel-slide');
+            const indicators = document.querySelectorAll('#slide-indicators button');
+            
+            const validIndex = (index + slides.length) % slides.length;
+
+            slides.forEach((slide, i) => { 
+                slide.style.transform = (i === validIndex) ? 'translateX(0)' : (i < validIndex ? 'translateX(-100%)' : 'translateX(100%)'); 
+            });
+            indicators.forEach((indicator, i) => { 
+                // Updated carousel indicator active color
+                indicator.className = `w-3 h-3 rounded-full transition-colors ${i === validIndex ? 'bg-accent' : 'bg-white/50'}`; 
+            });
+            currentSlide = validIndex;
+        }
+        const nextSlide = () => goToSlide(currentSlide + 1);
+        const prevSlide = () => goToSlide(currentSlide - 1);
+
+        // --- Product Section Logic ---
+        function initializeProductCategories() {
+            const productsContainer = document.getElementById('product-grid-container'); 
+            if (!productsContainer) return;
+            
+            productsContainer.innerHTML = '';
+            productCategories.forEach(category => {
+                const categoryElement = document.createElement('div');
+                categoryElement.className = 'bg-white border-2 border-gray-200 rounded-lg p-4 sm:p-6 text-center hover:shadow-lg transition-shadow group product-card';
+                categoryElement.innerHTML = `
+                    <h3 class="text-lg sm:text-xl font-bold text-primary mb-3 sm:mb-4">${category.title}</h3>
+                    <div class="mb-4 sm:mb-6">
+                        <img src="${category.image}" alt="${category.title}" class="w-24 h-24 sm:w-32 sm:h-32 mx-auto object-cover rounded-full product-image">
+                    </div>
+                    <button onclick="showCategoryDetails('${category.id}')" class="w-full bg-accent hover:bg-accent-dark text-white transition-colors rounded px-4 py-2 font-semibold">
+                        View Details
+                    </button>
+                `;
+                productsContainer.appendChild(categoryElement);
+            });
+            lucide.createIcons();
+        }
+
+        function showCategoryDetails(categoryId) {
+            document.querySelectorAll('.product-details-section').forEach(section => {
+                section.classList.add('hidden');
+            });
+            const targetSection = document.getElementById(`${categoryId}-details-section`);
+            if (targetSection) {
+                targetSection.classList.remove('hidden');
+                targetSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+        }
+
+        // --- Mobile menu functionality ---
+        function initializeMobileMenu() {
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenuClose = document.getElementById('mobile-menu-close');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const mobileMenuOverlay = document.getElementById('mobile-menu-overlay');
+            const mobileMenuLinks = document.querySelectorAll('.mobile-menu-link');
+            const openMobileMenu = () => { mobileMenu.classList.add('open'); mobileMenuOverlay.classList.remove('hidden'); document.body.style.overflow = 'hidden'; };
+            const closeMobileMenu = () => { mobileMenu.classList.remove('open'); mobileMenuOverlay.classList.add('hidden'); document.body.style.overflow = ''; };
+            mobileMenuBtn.addEventListener('click', openMobileMenu);
+            mobileMenuClose.addEventListener('click', closeMobileMenu);
+            mobileMenuOverlay.addEventListener('click', closeMobileMenu);
+            mobileMenuLinks.forEach(link => link.addEventListener('click', closeMobileMenu));
+        }
+        
+        // --- Form submission ---
+        function initializeForm() {
+            const form = document.getElementById('inquiry-form');
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+                alert('Thank you for your inquiry! We will get back to you soon.');
+                form.reset();
+            });
+        }
+
+        // --- Smooth scrolling for anchor links ---
+        function initializeSmoothScrolling() {
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) { target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+                });
+            });
+        }
+
+        // --- Initialize everything when DOM is loaded ---
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeCarousel();
+            initializeProductCategories();
+            initializeMobileMenu();
+            initializeSmoothScrolling();
+            initializeForm();
+
+            setInterval(nextSlide, 5000);
+            document.getElementById('prev-slide').addEventListener('click', prevSlide);
+            document.getElementById('next-slide').addEventListener('click', nextSlide);
+            document.getElementById('prev-slide-mobile').addEventListener('click', prevSlide);
+            document.getElementById('next-slide-mobile').addEventListener('click', nextSlide);
+        });
+    </script>
+</body>
+</html>
